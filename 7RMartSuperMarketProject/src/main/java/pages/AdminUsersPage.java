@@ -35,13 +35,13 @@ public void clickOnNewButton()
 {
 	newbutton.click();
 }
-public void enterUsername()
+public void enterUsername(String username1)
 {
-	usernamefield.sendKeys("Ann.Mary");
+	usernamefield.sendKeys(username1);
 }
-public  void enterPassword() 
+public  void enterPassword(String password1) 
 {
-    passwordfield.sendKeys("123@456");
+    passwordfield.sendKeys(password1);
 }
 public void selectUserType()
 {

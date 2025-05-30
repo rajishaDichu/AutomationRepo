@@ -23,8 +23,10 @@ public class AdminUsersTest extends Base{
 		AdminUsersPage adminpage=new AdminUsersPage(driver);
 		adminpage.clickOnAdminUsers();
 		adminpage.clickOnNewButton();
-		adminpage.enterUsername();
-		adminpage.enterPassword();
+		String username1=ExcelUtility.getStringData(0, 0, "AdminUserPage");
+		adminpage.enterUsername(username1);
+		String password1=ExcelUtility.getStringData(0, 1, "AdminUserPage");
+		adminpage.enterPassword(password1);
 		adminpage.selectUserType();
 		adminpage.clickOnSave();
 	}
