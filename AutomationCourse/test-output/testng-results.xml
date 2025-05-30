@@ -2,48 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-22T11:29:05 IST" name="Default suite" finished-at="2025-05-22T11:29:06 IST" duration-ms="138">
+  <suite started-at="2025-05-23T11:08:30 IST" name="Default suite" finished-at="2025-05-23T11:08:36 IST" duration-ms="6149">
     <groups>
     </groups>
-    <test started-at="2025-05-22T11:29:05 IST" name="Default test" finished-at="2025-05-22T11:29:06 IST" duration-ms="138">
-      <class name="seleniumBasics.TestNGAnnotations">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:seleniumBasics.TestNGAnnotations@2d3379b4]" started-at="2025-05-22T11:29:05 IST" name="beforeSuite" finished-at="2025-05-22T11:29:05 IST" duration-ms="26" status="PASS">
+    <test started-at="2025-05-23T11:08:30 IST" name="Default test" finished-at="2025-05-23T11:08:36 IST" duration-ms="6149">
+      <class name="testScript.LoginTest">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScript.LoginTest@74f0ea28]" started-at="2025-05-23T11:08:30 IST" name="initializeBrowser" finished-at="2025-05-23T11:08:36 IST" duration-ms="5644" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:seleniumBasics.TestNGAnnotations@2d3379b4]" started-at="2025-05-22T11:29:05 IST" name="beforeClass" finished-at="2025-05-22T11:29:05 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="verifyUserLoginWithInvalidCredentials()[pri:0, instance:testScript.LoginTest@74f0ea28]" started-at="2025-05-23T11:08:36 IST" name="verifyUserLoginWithInvalidCredentials" finished-at="2025-05-23T11:08:36 IST" duration-ms="433" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="BeforeMethodAnnotation()[pri:0, instance:seleniumBasics.TestNGAnnotations@2d3379b4]" started-at="2025-05-22T11:29:05 IST" name="BeforeMethodAnnotation" finished-at="2025-05-22T11:29:05 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- verifyUserLoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="browserCloseandQuit()[pri:0, instance:testScript.LoginTest@74f0ea28]" started-at="2025-05-23T11:08:36 IST" name="browserCloseandQuit" finished-at="2025-05-23T11:08:36 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BeforeMethodAnnotation -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:seleniumBasics.TestNGAnnotations@2d3379b4]" started-at="2025-05-22T11:29:05 IST" name="beforeTest" finished-at="2025-05-22T11:29:05 IST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="testcase()[pri:0, instance:seleniumBasics.TestNGAnnotations@2d3379b4]" started-at="2025-05-22T11:29:05 IST" name="testcase" finished-at="2025-05-22T11:29:06 IST" duration-ms="29" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testcase -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:seleniumBasics.TestNGAnnotations@2d3379b4]" started-at="2025-05-22T11:29:06 IST" name="afterMethod" finished-at="2025-05-22T11:29:06 IST" duration-ms="4" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:seleniumBasics.TestNGAnnotations@2d3379b4]" started-at="2025-05-22T11:29:06 IST" name="afterTest" finished-at="2025-05-22T11:29:06 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:seleniumBasics.TestNGAnnotations@2d3379b4]" started-at="2025-05-22T11:29:06 IST" name="afterClass" finished-at="2025-05-22T11:29:06 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:seleniumBasics.TestNGAnnotations@2d3379b4]" started-at="2025-05-22T11:29:06 IST" name="afterSuite" finished-at="2025-05-22T11:29:06 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- seleniumBasics.TestNGAnnotations -->
+        </test-method> <!-- browserCloseandQuit -->
+      </class> <!-- testScript.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
