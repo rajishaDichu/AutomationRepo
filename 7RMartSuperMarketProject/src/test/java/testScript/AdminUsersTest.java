@@ -7,6 +7,7 @@ import automationCore.Base;
 import pages.AdminUsersPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
+import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base{
 
@@ -23,9 +24,10 @@ public class AdminUsersTest extends Base{
 		AdminUsersPage adminpage=new AdminUsersPage(driver);
 		adminpage.clickOnAdminUsers();
 		adminpage.clickOnNewButton();
-		String username1=ExcelUtility.getStringData(0, 0, "AdminUserPage");
+		FakerUtility fakerutility=new FakerUtility();
+		String username1=fakerutility.createRandomUsername();
 		adminpage.enterUsername(username1);
-		String password1=ExcelUtility.getStringData(0, 1, "AdminUserPage");
+		String password1=fakerutility.createRandomPassword();
 		adminpage.enterPassword(password1);
 		adminpage.selectUserType();
 		adminpage.clickOnSave();

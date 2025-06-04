@@ -15,14 +15,8 @@ public class HandlingFileUpload extends Base{
 	{
       HandlingFileUpload upload=new HandlingFileUpload();
       upload.initializeBrowser();
-      //upload.verifyFileUploadUsingSendKeys();
-      try {
-		upload.verifyFIleUploadUsingRobotclass();
-	} catch (AWTException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-      //upload.browserCloseandQuit();
+      upload.verifyFileUploadUsingSendKeys();
+     // upload.verifyFIleUploadUsingRobotclass();
 
 	}
 	

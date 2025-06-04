@@ -13,14 +13,22 @@ public LoginPage(WebDriver driver)
 	PageFactory.initElements(driver, this);
 }
 @FindBy(xpath="//input[@id='user-name']")private WebElement usernamefield;
+@FindBy(xpath="//input[@id='password']")private WebElement passwordfield;
+@FindBy(xpath="//input[@id='login-button']")private WebElement submitbutton;
 
 
 
-
-
-public void enterUsernameOnUsernameField() 
+public void enterUsernameOnUsernameField(String username) 
 {
-	usernamefield.sendKeys("standard_user"); 
+	usernamefield.sendKeys(username); 
+}
+public void enterPasswordOnPasswordField(String password)
+{
+	passwordfield.sendKeys(password);
+}
+public void clickOnSubmit()
+{
+	submitbutton.click();
 }
 }
 

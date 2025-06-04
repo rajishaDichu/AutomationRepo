@@ -25,4 +25,5 @@ public class HandlingFrames extends Base{
       WebElement heading=driver.findElement(By.xpath("//h1[text()='This is a sample page']"));
       System.out.println(heading.getText());
 	}
+	
 }
