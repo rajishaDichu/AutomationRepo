@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class HomeTest extends Base
 {
-	@Test
+	@Test(description = "Verify whether the user can logout successfully")
 	public void verifywhetherUserIsAbleToLogoutSuccessfully() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");

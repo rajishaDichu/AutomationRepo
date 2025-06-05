@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class ManageCategoryTest extends Base{
 
-	@Test
+	@Test (description = "Verify whether the user can add new category")
 	public void verifywhetherUserIsAbleToAddNewCategory() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");

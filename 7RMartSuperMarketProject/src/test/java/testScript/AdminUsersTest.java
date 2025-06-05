@@ -12,7 +12,7 @@ import utilities.FakerUtility;
 public class AdminUsersTest extends Base{
 
 	
-	@Test
+	@Test (description = "Verify whether the user can add a new user")
 	public void verifyWhetherUserIsAbleToAddNewAdminUser() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");
@@ -32,7 +32,7 @@ public class AdminUsersTest extends Base{
 		adminpage.selectUserType();
 		adminpage.clickOnSave();
 	}
-	@Test
+	@Test (description = "Verify whether the user can search for a user")
 	public void verifyWhetherUserIsAbleToSearchForAUser() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");

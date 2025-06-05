@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base{
 	
-	@Test
+	@Test (description = "Verify whether the user can add new news")
 	public void verifyWhetherUserIsAbleToAddNewNews() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");
@@ -28,7 +28,7 @@ public class ManageNewsTest extends Base{
 		news.clickSave();
 		}
 	
-	@Test
+	@Test (description = "Verify whether the user can search for a news")
 	public void verifyWhetherUserIsAbleToSearchAddedNews() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");
