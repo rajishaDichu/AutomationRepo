@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constants.Constant;
+
 public class ManageCategoryPage {
 	public WebDriver driver;
 
@@ -51,7 +53,7 @@ public class ManageCategoryPage {
 	
 	public void choosefile()
 	{
-		choosefilebutton.sendKeys("C:\\Users\\rajis\\git\\AutomationRepo\\7RMartSuperMarketProject\\src\\test\\resources\\cookingessentials.png");;
+		choosefilebutton.sendKeys(Constant.IMAGEDATAFILE);
 	}
 
 	public void showOnTop()
