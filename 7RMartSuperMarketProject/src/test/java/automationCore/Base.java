@@ -23,18 +23,17 @@ public class Base {
 	}
 
 	@AfterMethod
-	//public void browserCloseandQuit() {
-		// driver.close();
+	// public void browserCloseandQuit() {
+	// driver.close();
+	// driver.quit();
+	// }
+	public void driverQuit(ITestResult iTestResult) throws IOException {
+		if (iTestResult.getStatus() == ITestResult.FAILURE) // iTestResult is a predefined interface to
+		{
+			ScreenshotUtility screenShot = new ScreenshotUtility();
+			screenShot.getScreenshot(driver, iTestResult.getName());
+		}
 		// driver.quit();
-	//}
-	public void driverQuit(ITestResult iTestResult) throws IOException
-	{
-	if(iTestResult.getStatus()==ITestResult.FAILURE) //iTestResult is a predefined interface to
-	{
-	ScreenshotUtility screenShot=new ScreenshotUtility();
-	screenShot.getScreenshot(driver, iTestResult.getName());
-	}
-	driver.quit();
 
 	}
 }

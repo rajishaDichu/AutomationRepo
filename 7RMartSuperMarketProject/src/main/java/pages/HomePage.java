@@ -6,27 +6,25 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
-	
+
 	public WebDriver driver;
-	public HomePage(WebDriver driver) 
-	{
+
+	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-    @FindBy(xpath="//img[@src=\"https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png\"]")private WebElement adminlink;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']")private WebElement logoutlink;
-	
-	
-	public void clickOnAdmin()
-	{
+
+	@FindBy(xpath = "//img[@src=\"https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png\"]")
+	private WebElement adminlink;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']")
+	private WebElement logoutlink;
+
+	public void clickOnAdmin() {
 		adminlink.click();
 	}
-	
-	public void clickOnLogout()
-	{
+
+	public void clickOnLogout() {
 		logoutlink.click();
 	}
-	
 
 }
