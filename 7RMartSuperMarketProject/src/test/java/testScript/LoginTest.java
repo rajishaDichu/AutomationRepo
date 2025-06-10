@@ -2,6 +2,7 @@ package testScript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
@@ -17,6 +18,11 @@ public class LoginTest extends Base {
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
 		loginpage.clickOnSubmit();
+		boolean isdashboarddisplayed=loginpage.dashboardtileDisplayed();
+		//Assert.assertTrue(isdashboarddisplayed, "User was unable to login with valid credentials");
+		String expected="Dashboard";
+		String actual=loginpage.getdashboardtext();
+		Assert.assertEquals(actual,expected,"User was unable to login with valid credentials");
 	}
 
 	@Test(description = "Verify whether the user can log in with valid username and invalid password",priority=2)
@@ -27,6 +33,9 @@ public class LoginTest extends Base {
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
 		loginpage.clickOnSubmit();
+		boolean isdashboarddisplayed=loginpage.dashboardtileDisplayed();
+		Assert.assertFalse(isdashboarddisplayed, "User was able to login with invalid password");
+		
 	}
 
 	@Test(description = "Verify whether the user can log in with invalid username and valid password",priority=3)
@@ -37,6 +46,8 @@ public class LoginTest extends Base {
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
 		loginpage.clickOnSubmit();
+		boolean isalertdisplayed=loginpage.alertdisplayed();
+		Assert.assertTrue(isalertdisplayed, "User was able to login with invalid username");
 	}
 
 	@Test(description = "Verify whether the user can log in with invalid credentials",priority=4)
@@ -47,6 +58,8 @@ public class LoginTest extends Base {
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
 		loginpage.clickOnSubmit();
+		boolean isalertdisplayed=loginpage.alertdisplayed();
+		Assert.assertTrue(isalertdisplayed, "User was able to login with invalid credential");
 	}
 
 }

@@ -1,10 +1,17 @@
 package pages;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import constants.Constant;
 
@@ -32,6 +39,8 @@ public class ManageCategoryPage {
 	private WebElement showonleftno;
 	@FindBy(xpath = "//button[text()='Save']")
 	private WebElement savebutton;
+	@FindBy(xpath="//h1[text()='Add Category']")private WebElement addcategorypage;
+	
 
 	public void clickOnManageCategory() {
 		managecategorylink.click();
@@ -51,32 +60,43 @@ public class ManageCategoryPage {
 	}
 
 	public void discountSelect() {
+		
+		
 		discount.click();
 	}
 
 	public void choosefile() {
+		
 		choosefilebutton.sendKeys(Constant.IMAGEDATAFILE);
+		
 	}
 
 	public void showOnTop() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", showontopnobutton);
-		js.executeScript("window.scrollBy(0,350)", "");
-		// showontopnobutton.click();
+		js.executeScript("window.scrollBy(0,450))", "");
+		//WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(8));
+		//wait.until(ExpectedConditions.elementToBeClickable(showontopnobutton)); //Explicit wait applied on show message button.
+	     //showontopnobutton.click();
 
 	}
 
 	public void showOnLeft() {
-		// JavascriptExecutor js = (JavascriptExecutor)driver;
-		// js.executeScript("arguments[0].click();", showonleftno);
+		 //JavascriptExecutor js = (JavascriptExecutor)driver;
+		//js.executeScript("arguments[0].click();", showonleftno);
 		// js.executeScript("window.scrollBy(0,350)", "");
-		showonleftno.click();
+	showonleftno.click();
 	}
 
 	public void clickOnSave() {
-		// JavascriptExecutor js = (JavascriptExecutor)driver;
-		// js.executeScript("arguments[0].click();", savebutton);
-		// js.executeScript("window.scrollBy(0,400)", "");
+		 //JavascriptExecutor js = (JavascriptExecutor)driver;
+		 //js.executeScript("arguments[0].click();", savebutton);
+		 //js.executeScript("window.scrollBy(0,400)", "");
+		
 		savebutton.click();
+	}
+	public String addcategory()
+	{
+		return addcategorypage.getText();
 	}
 }

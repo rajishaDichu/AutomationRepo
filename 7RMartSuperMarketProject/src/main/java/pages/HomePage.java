@@ -18,6 +18,8 @@ public class HomePage {
 	private WebElement adminlink;
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']")
 	private WebElement logoutlink;
+	@FindBy(xpath = "//button[@type=\"submit\"]")
+	private WebElement signinbutton;
 
 	public void clickOnAdmin() {
 		adminlink.click();
@@ -27,4 +29,7 @@ public class HomePage {
 		logoutlink.click();
 	}
 
+	public boolean loginPage() {
+		return signinbutton.isDisplayed();
+	}
 }

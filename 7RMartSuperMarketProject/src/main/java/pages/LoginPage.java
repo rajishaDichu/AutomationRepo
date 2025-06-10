@@ -19,6 +19,10 @@ public class LoginPage {
 	private WebElement passwordfield;
 	@FindBy(xpath = "//button[@type=\"submit\"]")
 	private WebElement submitbutton;
+	@FindBy(xpath = "//p[text()='Dashboard']")
+	private WebElement dashboradtile;
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']") private WebElement invalidcredentialaslert;
+	
 
 	public void enterUsernameOnUsernameField(String username) {
 		usernamefield.sendKeys(username);
@@ -32,4 +36,17 @@ public class LoginPage {
 		submitbutton.click();
 	}
 
-}
+	public boolean dashboardtileDisplayed() {
+		return dashboradtile.isDisplayed();
+
+	}
+    public String getdashboardtext()
+    {
+    	return dashboradtile.getText();
+    }
+    public boolean alertdisplayed() {
+    	return invalidcredentialaslert.isDisplayed();
+    }
+    	
+	}
+

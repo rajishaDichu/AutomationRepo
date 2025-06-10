@@ -34,6 +34,10 @@ public class AdminUsersPage {
 	private WebElement usertypesearch;
 	@FindBy(xpath = "//button[@name='Search']")
 	private WebElement clicksearch;
+	@FindBy(xpath = "//div[@class=\"alert alert-success alert-dismissible\"]")
+	private WebElement useraddedalert;
+	@FindBy(xpath = "//h1[text()='Admin Users']")
+	private WebElement usersearchpage;
 
 	public void clickOnAdminUsers() {
 		adminuserslink.click();
@@ -75,5 +79,13 @@ public class AdminUsersPage {
 
 	public void enterSearch() {
 		clicksearch.click();
+	}
+
+	public boolean userAdded() {
+		return useraddedalert.isDisplayed();
+	}
+
+	public String usersearchpage() {
+		return usersearchpage.getText();
 	}
 }

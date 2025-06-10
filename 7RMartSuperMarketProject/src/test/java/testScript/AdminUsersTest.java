@@ -1,6 +1,8 @@
 package testScript;
 
 import java.io.IOException;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
@@ -29,6 +31,8 @@ public class AdminUsersTest extends Base {
 		adminpage.enterPassword(password1);
 		adminpage.selectUserType();
 		adminpage.clickOnSave();
+		boolean isuseraddedalertdisplayed = adminpage.userAdded();
+		Assert.assertTrue(isuseraddedalertdisplayed, "User is unable to add a new user");
 	}
 
 	@Test(description = "Verify whether the user can search for a user")
@@ -46,5 +50,8 @@ public class AdminUsersTest extends Base {
 		adminpage.enterUserSearch(user);
 		adminpage.enterUserTypeSearch();
 		adminpage.enterSearch();
+		String expected = "Admin Users";
+		String actual = adminpage.usersearchpage();
+		Assert.assertEquals(actual, expected, "User is unable to search for a user");
 	}
 }

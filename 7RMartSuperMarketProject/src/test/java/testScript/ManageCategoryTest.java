@@ -2,6 +2,7 @@ package testScript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
@@ -30,6 +31,9 @@ public class ManageCategoryTest extends Base {
 		managecategory.showOnTop();
 		managecategory.showOnLeft();
 		managecategory.clickOnSave();
+		String expected="Add Category";
+		String actual=managecategory.addcategory();
+		Assert.assertEquals(actual,expected,"User is unable to add new category");
 
 	}
 
