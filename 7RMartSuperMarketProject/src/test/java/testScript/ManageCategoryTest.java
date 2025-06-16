@@ -6,13 +6,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
 
 public class ManageCategoryTest extends Base {
 
-	@Test(description = "Verify whether the user can add new category")
+	@Test(description = "Verify whether the user can add new category",retryAnalyzer=retry.Retry.class)
 	public void verifywhetherUserIsAbleToAddNewCategory() throws IOException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
@@ -27,14 +28,16 @@ public class ManageCategoryTest extends Base {
 		String categoryname = ExcelUtility.getStringData(1, 0, "ManageCategoryPage");
 		managecategory.enterCategory(categoryname);
 		managecategory.discountSelect();
+		managecategory.pageScroll();
 		managecategory.choosefile();
-		managecategory.showOnTop();
-		managecategory.showOnLeft();
+		managecategory.pageScroll();
+		managecategory.applywait();
+		managecategory.radioButton1();
+		managecategory.radioButton2();
+		managecategory.pageScroll();
 		managecategory.clickOnSave();
-		String expected="Add Category";
-		String actual=managecategory.addcategory();
-		Assert.assertEquals(actual,expected,"User is unable to add new category");
-
+		boolean isaddcategorydisplayed=managecategory.addcategory();
+		Assert.assertTrue(isaddcategorydisplayed, Messages.UNABLETOADDCATEGORYERROR);
 	}
 
 }

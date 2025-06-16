@@ -34,12 +34,12 @@ public class ManageCategoryPage {
 	@FindBy(xpath = "//input[@id='main_img']")
 	private WebElement choosefilebutton;
 	@FindBy(xpath = "//input[@name='top_menu'and@value='no']")
-	private WebElement showontopnobutton;
-	@FindBy(xpath = "//input[@value='no']")
-	private WebElement showonleftno;
+	private WebElement radiobutton1;
+	@FindBy(xpath = "//input[@name='show_home'and@value='no'] ")
+	private WebElement radiobutton2;
 	@FindBy(xpath = "//button[text()='Save']")
 	private WebElement savebutton;
-	@FindBy(xpath="//h1[text()='Add Category']")private WebElement addcategorypage;
+	@FindBy(xpath="//h3[text()='Enter Category Informations']")private WebElement addcategorypage;
 	
 
 	public void clickOnManageCategory() {
@@ -61,7 +61,6 @@ public class ManageCategoryPage {
 
 	public void discountSelect() {
 		
-		
 		discount.click();
 	}
 
@@ -70,33 +69,35 @@ public class ManageCategoryPage {
 		choosefilebutton.sendKeys(Constant.IMAGEDATAFILE);
 		
 	}
-
-	public void showOnTop() {
+    
+	public void pageScroll() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", showontopnobutton);
-		js.executeScript("window.scrollBy(0,450))", "");
-		//WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(8));
-		//wait.until(ExpectedConditions.elementToBeClickable(showontopnobutton)); //Explicit wait applied on show message button.
-	     //showontopnobutton.click();
+		js.executeScript("window.scrollBy(0,500)", "");
+	}
+	public void applywait() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
+		wait.until(ExpectedConditions.elementToBeClickable(radiobutton1));
+	    }
+	    
+	public void radioButton1() {
 
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
+		//wait.until(ExpectedConditions.elementToBeClickable(radiobutton1)); // Explicit wait
+		radiobutton1.click();
 	}
 
-	public void showOnLeft() {
-		 //JavascriptExecutor js = (JavascriptExecutor)driver;
-		//js.executeScript("arguments[0].click();", showonleftno);
-		// js.executeScript("window.scrollBy(0,350)", "");
-	showonleftno.click();
+	public void radioButton2() {
+
+		radiobutton2.click();
 	}
 
 	public void clickOnSave() {
-		 //JavascriptExecutor js = (JavascriptExecutor)driver;
-		 //js.executeScript("arguments[0].click();", savebutton);
-		 //js.executeScript("window.scrollBy(0,400)", "");
-		
-		savebutton.click();
+		JavascriptExecutor js = (JavascriptExecutor)driver;                  
+		js.executeScript("arguments[0].click();", savebutton);
+		//savebutton.click();
 	}
-	public String addcategory()
-	{
-		return addcategorypage.getText();
+
+	public boolean addcategory() {
+		return addcategorypage.isDisplayed();
 	}
 }

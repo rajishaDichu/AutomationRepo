@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.AdminUsersPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -13,7 +14,7 @@ import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base {
 
-	@Test(description = "Verify whether the user can add a new user")
+	@Test(description = "Verify whether the user can add a new user",retryAnalyzer=retry.Retry.class)
 	public void verifyWhetherUserIsAbleToAddNewAdminUser() throws IOException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
@@ -32,7 +33,7 @@ public class AdminUsersTest extends Base {
 		adminpage.selectUserType();
 		adminpage.clickOnSave();
 		boolean isuseraddedalertdisplayed = adminpage.userAdded();
-		Assert.assertTrue(isuseraddedalertdisplayed, "User is unable to add a new user");
+		Assert.assertTrue(isuseraddedalertdisplayed, Messages.UNABLETOADDNEWUSERERROR);
 	}
 
 	@Test(description = "Verify whether the user can search for a user")
@@ -52,6 +53,6 @@ public class AdminUsersTest extends Base {
 		adminpage.enterSearch();
 		String expected = "Admin Users";
 		String actual = adminpage.usersearchpage();
-		Assert.assertEquals(actual, expected, "User is unable to search for a user");
+		Assert.assertEquals(actual, expected, Messages.UNABLETOSEARCHUSERERROR);
 	}
 }

@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
@@ -27,7 +28,7 @@ public class ManageNewsTest extends Base {
 		news.newNewsField(newsdata);
 		news.clickSave();
 		boolean isnewsaddedalertdisplayed=news.newsaddedmessage();
-		Assert.assertTrue(isnewsaddedalertdisplayed, "User is unable to add new news");
+		Assert.assertTrue(isnewsaddedalertdisplayed,Messages.UNABLETOADDNEWSERROR );
 	}
 
 	@Test(description = "Verify whether the user can search for a news")
@@ -44,7 +45,7 @@ public class ManageNewsTest extends Base {
 		news.searchNewsFiled(searchnews);
 		news.searchsubmit();
 		boolean ismanagenewstitledisplayed=news.searchnewspage();
-		Assert.assertTrue(ismanagenewstitledisplayed, "User is unable to search for a news");
+		Assert.assertTrue(ismanagenewstitledisplayed, Messages.UNABLETOSEARCHNEWSERROR);
 	}
 
 }
