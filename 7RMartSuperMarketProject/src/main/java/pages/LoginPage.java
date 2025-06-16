@@ -21,7 +21,7 @@ public class LoginPage {
 	private WebElement submitbutton;
 	@FindBy(xpath = "//p[text()='Dashboard']")
 	private WebElement dashboradtile;
-	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']") private WebElement invalidcredentialaslert;
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']") private WebElement invalidcredentialalert;
 	
 
 	public void enterUsernameOnUsernameField(String username) {
@@ -45,7 +45,7 @@ public class LoginPage {
     	return dashboradtile.getText();
     }
     public boolean alertdisplayed() {
-    	return invalidcredentialaslert.isDisplayed();
+    	return invalidcredentialalert.isDisplayed();
     }
     	
 	}
