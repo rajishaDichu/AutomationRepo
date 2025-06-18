@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import constants.Constant;
+import utilities.PageUtility;
 
 public class ManageCategoryPage {
 	public WebDriver driver;
@@ -23,8 +24,7 @@ public class ManageCategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category']")
-	private WebElement managecategorylink;
+
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/Category/add']")
 	private WebElement newcategorylink;
 	@FindBy(xpath = "//input[@id='category']")
@@ -42,59 +42,66 @@ public class ManageCategoryPage {
 	@FindBy(xpath="//h3[text()='Enter Category Informations']")private WebElement addcategorypage;
 	
 
-	public void clickOnManageCategory() {
-		managecategorylink.click();
-	}
 
-	public void clickOnNewButton() {
+	public ManageCategoryPage clickOnNewButton() {
 		newcategorylink.click();
+		return this;
 	}
 
-	public void clickCategoryfield() {
+	public ManageCategoryPage clickCategoryfield() {
 		categoryfield.click();
 		categoryfield.sendKeys("Cooking Essentials");
+		return this;
 	}
 
-	public void enterCategory(String categoryname) {
+	public ManageCategoryPage enterCategory(String categoryname) {
 		categoryfield.sendKeys(categoryname);
+		return this;
 	}
 
-	public void discountSelect() {
+	public ManageCategoryPage discountSelect() {
 		
 		discount.click();
+		return this;
 	}
 
-	public void choosefile() {
+	public ManageCategoryPage choosefile() {
 		
 		choosefilebutton.sendKeys(Constant.IMAGEDATAFILE);
+		return this;
 		
 	}
     
-	public void pageScroll() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,500)", "");
+	public ManageCategoryPage pageScroll() {
+		PageUtility pageutility=new PageUtility();
+		pageutility.pageScroll();
+		return this;
 	}
-	public void applywait() {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
-		wait.until(ExpectedConditions.elementToBeClickable(radiobutton1));
+	public ManageCategoryPage applywait() {
+		PageUtility pageutility=new PageUtility();
+		pageutility.applywait(radiobutton1);
+		return this;
 	    }
 	    
-	public void radioButton1() {
+	public ManageCategoryPage radioButton1() {
 
 		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
 		//wait.until(ExpectedConditions.elementToBeClickable(radiobutton1)); // Explicit wait
 		radiobutton1.click();
+		return this;
 	}
 
-	public void radioButton2() {
+	public ManageCategoryPage radioButton2() {
 
 		radiobutton2.click();
+		return this;
 	}
 
-	public void clickOnSave() {
+	public ManageCategoryPage clickOnSave() {
 		JavascriptExecutor js = (JavascriptExecutor)driver;                  
 		js.executeScript("arguments[0].click();", savebutton);
 		//savebutton.click();
+		return this;
 	}
 
 	public boolean addcategory() {

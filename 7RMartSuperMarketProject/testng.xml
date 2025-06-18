@@ -8,8 +8,8 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="testScript.LoginTest">
-			<methods><include name="verifyUserLoginWithInvalidCredentials"></include></methods>
+			<class name="testScript.ManageNewsTest">
+			<methods><include name="verifyWhetherUserIsAbleToSearchAddedNews"></include></methods>
 				
 			</class>
 

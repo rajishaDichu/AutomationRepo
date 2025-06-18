@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.WaitUtility;
+
 public class AdminUsersPage {
 	public WebDriver driver;
 
@@ -14,8 +16,7 @@ public class AdminUsersPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//i[@class=\"fas fa-arrow-circle-right\"]")
-	private WebElement adminuserslink;
+
 	@FindBy(xpath = "//a[@class=\"btn btn-rounded btn-danger\"]")
 	private WebElement newbutton;
 	@FindBy(xpath = "//input[@id='username']")
@@ -39,46 +40,57 @@ public class AdminUsersPage {
 	@FindBy(xpath = "//h1[text()='Admin Users']")
 	private WebElement usersearchpage;
 
-	public void clickOnAdminUsers() {
-		adminuserslink.click();
-	}
+	
 
-	public void clickOnNewButton() {
+	public AdminUsersPage clickOnNewButton() {
 		newbutton.click();
+		return this;
 	}
 
-	public void enterUsername(String username1) {
+	public AdminUsersPage enterUsername(String username1) {
 		usernamefield.sendKeys(username1);
+		return this;
 	}
 
-	public void enterPassword(String password1) {
+	public AdminUsersPage enterPassword(String password1) {
 		passwordfield.sendKeys(password1);
+		return this;
 	}
 
-	public void selectUserType() {
+	public AdminUsersPage selectUserType() {
 		Select select = new Select(usertype);
 		select.selectByValue("admin");
+		return this;
 	}
 
-	public void clickOnSave() {
-		savebutton.click();
+	public AdminUsersPage clickOnSave() {
+		//savebutton.click();
+		WaitUtility wait= new WaitUtility();
+		wait.waitUntilElementToBeClickable(driver, savebutton);
+        savebutton.click();
+        return this;
 	}
-
-	public void clickOnSearch() {
+	
+	public AdminUsersPage clickOnSearch() {
 		searchbutton.click();
+		return this;
 	}
 
-	public void enterUserSearch(String user) {
+	public AdminUsersPage enterUserSearch(String user) {
 		usernamesearch.sendKeys(user);
+		return this;
 	}
 
-	public void enterUserTypeSearch() {
+	public AdminUsersPage enterUserTypeSearch() {
 		Select select = new Select(usertypesearch);
 		select.selectByValue("admin");
+		return this;
+		
 	}
 
-	public void enterSearch() {
+	public AdminUsersPage enterSearch() {
 		clicksearch.click();
+		return this;
 	}
 
 	public boolean userAdded() {

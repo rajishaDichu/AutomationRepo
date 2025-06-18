@@ -20,16 +20,39 @@ public class HomePage {
 	private WebElement logoutlink;
 	@FindBy(xpath = "//button[@type=\"submit\"]")
 	private WebElement signinbutton;
+	@FindBy(xpath = "//i[@class=\"fas fa-arrow-circle-right\"]")
+	private WebElement adminuserslink;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category']")
+	private WebElement managecategorylink;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']")
+	private WebElement managenewslink;
 
-	public void clickOnAdmin() {
+	public HomePage clickOnAdmin() {
 		adminlink.click();
+		return this;
 	}
 
-	public void clickOnLogout() {
+	public LoginPage clickOnLogout() {
 		logoutlink.click();
+		return new LoginPage(driver);
 	}
 
 	public boolean loginPage() {
 		return signinbutton.isDisplayed();
 	}
+	public AdminUsersPage clickOnAdminUsers() {
+		adminuserslink.click();
+		return new AdminUsersPage(driver);
+	}
+	public ManageCategoryPage clickOnManageCategory() {
+		managecategorylink.click();
+		return new ManageCategoryPage(driver);
+	}
+	
+	public ManageNewsPage clickManageNews() {
+		managenewslink.click();
+		return new ManageNewsPage(driver);
+	}
+
+
 }
