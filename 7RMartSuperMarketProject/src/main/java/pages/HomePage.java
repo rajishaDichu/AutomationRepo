@@ -40,19 +40,20 @@ public class HomePage {
 	public boolean loginPage() {
 		return signinbutton.isDisplayed();
 	}
+
 	public AdminUsersPage clickOnAdminUsers() {
 		adminuserslink.click();
 		return new AdminUsersPage(driver);
 	}
+
 	public ManageCategoryPage clickOnManageCategory() {
 		managecategorylink.click();
 		return new ManageCategoryPage(driver);
 	}
-	
+
 	public ManageNewsPage clickManageNews() {
 		managenewslink.click();
 		return new ManageNewsPage(driver);
 	}
-
 
 }

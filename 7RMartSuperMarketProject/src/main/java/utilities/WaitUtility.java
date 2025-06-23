@@ -18,6 +18,10 @@ public class WaitUtility {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
+    public void applywait(WebElement element, WebDriver driver) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
 	public void waitUntilAlertIsPresent(WebDriver driver)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));

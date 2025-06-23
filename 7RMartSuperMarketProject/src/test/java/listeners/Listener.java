@@ -20,7 +20,7 @@ public class Listener extends Base implements ITestListener {
 
 	public void onTestStart(ITestResult result) {
 
-		ITestListener.super.onTestStart(result);// ITestListener is a predefined interface
+		ITestListener.super.onTestStart(result);// ITestListener is a predefined interface used to override the methods.
 		test = extent.createTest(result.getMethod().getMethodName());//manages report's lifecycle>
 		extentTest.set(test);
 

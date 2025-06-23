@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import constants.Constant;
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class ManageCategoryPage {
 	public WebDriver driver;
@@ -23,7 +24,6 @@ public class ManageCategoryPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
 
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/Category/add']")
 	private WebElement newcategorylink;
@@ -39,9 +39,8 @@ public class ManageCategoryPage {
 	private WebElement radiobutton2;
 	@FindBy(xpath = "//button[text()='Save']")
 	private WebElement savebutton;
-	@FindBy(xpath="//h3[text()='Enter Category Informations']")private WebElement addcategorypage;
-	
-
+	@FindBy(xpath = "//h3[text()='Enter Category Informations']")
+	private WebElement addcategorypage;
 
 	public ManageCategoryPage clickOnNewButton() {
 		newcategorylink.click();
@@ -60,33 +59,35 @@ public class ManageCategoryPage {
 	}
 
 	public ManageCategoryPage discountSelect() {
-		
+
 		discount.click();
 		return this;
 	}
 
 	public ManageCategoryPage choosefile() {
-		
+
 		choosefilebutton.sendKeys(Constant.IMAGEDATAFILE);
 		return this;
-		
+
 	}
-    
+
 	public ManageCategoryPage pageScroll() {
-		PageUtility pageutility=new PageUtility();
+		PageUtility pageutility = new PageUtility();
 		pageutility.pageScroll();
 		return this;
 	}
+
 	public ManageCategoryPage applywait() {
-		PageUtility pageutility=new PageUtility();
-		pageutility.applywait(radiobutton1);
+		WaitUtility waitutility = new WaitUtility();
+		waitutility.applywait(radiobutton1, driver);
 		return this;
-	    }
-	    
+	}
+
 	public ManageCategoryPage radioButton1() {
 
-		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
-		//wait.until(ExpectedConditions.elementToBeClickable(radiobutton1)); // Explicit wait
+		// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
+		// wait.until(ExpectedConditions.elementToBeClickable(radiobutton1)); //
+		// Explicit wait
 		radiobutton1.click();
 		return this;
 	}
@@ -98,9 +99,9 @@ public class ManageCategoryPage {
 	}
 
 	public ManageCategoryPage clickOnSave() {
-		JavascriptExecutor js = (JavascriptExecutor)driver;                  
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", savebutton);
-		//savebutton.click();
+		// savebutton.click();
 		return this;
 	}
 
