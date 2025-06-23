@@ -9,8 +9,8 @@ public class ExtentReportUtility {
 
 	public synchronized static ExtentReports createExtentReports() {
 		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");// path and format
-																										// to store the
-																										// file
+																										// to store the file
+																										
 		reporter.config().setReportName("7RMartSuperMaket");
 		extentReports.attachReporter(reporter);
 		extentReports.setSystemInfo("Organization", "Obsqura");
