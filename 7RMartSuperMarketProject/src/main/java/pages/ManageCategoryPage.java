@@ -47,12 +47,6 @@ public class ManageCategoryPage {
 		return this;
 	}
 
-	public ManageCategoryPage clickCategoryfield() {
-		categoryfield.click();
-		categoryfield.sendKeys("Cooking Essentials");
-		return this;
-	}
-
 	public ManageCategoryPage enterCategory(String categoryname) {
 		categoryfield.sendKeys(categoryname);
 		return this;

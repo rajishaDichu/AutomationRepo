@@ -25,7 +25,6 @@ public class ManageCategoryTest extends Base {
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password);
 		homepage=loginpage.clickOnSubmit();
         managepage=homepage.clickOnManageCategory().clickOnNewButton();
-		// managecategory.clickCategoryfield();
 		String categoryname = ExcelUtility.getStringData(1, 0, "ManageCategoryPage");
 		managepage.enterCategory(categoryname).discountSelect().choosefile().applywait().radioButton1()
 		.radioButton2().pageScroll().clickOnSave();//.applywait()

@@ -26,7 +26,7 @@ public class PageUtility {
     	object.selectByVisibleText(value);
     }
     
-    public void selectCheckboxWithVisibleText(WebElement element, int value)
+    public void selectCheckboxWithIndex(WebElement element, int value)
     {
     	Select object=new Select(element);
     	object.selectByIndex(value);

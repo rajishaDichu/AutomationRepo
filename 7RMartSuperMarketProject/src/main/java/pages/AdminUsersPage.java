@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class AdminUsersPage {
@@ -58,8 +59,10 @@ public class AdminUsersPage {
 	}
 
 	public AdminUsersPage selectUserType() {
-		Select select = new Select(usertype);
-		select.selectByValue("admin");
+		//Select select = new Select(usertype);
+		//select.selectByValue("admin");
+		PageUtility selection = new PageUtility();
+		selection.selectCheckboxWithIndex(usertypesearch, 2);
 		return this;
 	}
 
@@ -82,8 +85,10 @@ public class AdminUsersPage {
 	}
 
 	public AdminUsersPage enterUserTypeSearch() {
-		Select select = new Select(usertypesearch);
-		select.selectByValue("admin");
+		//Select select = new Select(usertypesearch);
+		//select.selectByIndex(2);
+		PageUtility selection = new PageUtility();
+		selection.selectCheckboxWithIndex(usertypesearch, 2);
 		return this;
 		
 	}
